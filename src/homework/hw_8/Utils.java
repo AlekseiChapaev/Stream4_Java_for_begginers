@@ -115,22 +115,22 @@ public class Utils {
         int countOdd = getOddNumbersInArray(arr);
         int countEven = arr.length - countOdd;
 
-        if(countOdd == countEven) {
+        if (countOdd == countEven) {
             return new int[0];
-        } else if(countOdd > countEven){
+        } else if (countOdd > countEven) {
             int[] arrTask17 = new int[countOdd];
             int index = 0;
             for (int i = 0; i < arr.length; i++) {
-                if(arr[i] % 2 != 0){
+                if (arr[i] % 2 != 0) {
                     arrTask17[index++] = arr[i];
                 }
             }
             return arrTask17;
-        } else{
+        } else {
             int index = 0;
             int[] arrTask17 = new int[countEven];
-            for(int i = 0; i < arr.length; i++){
-                if(arr[i] % 2 == 0){
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] % 2 == 0) {
                     arrTask17[index++] = arr[i];
                 }
             }
@@ -157,14 +157,14 @@ public class Utils {
     public static int[] getTask20(int[] arr) {
         int count = 0;
         for (int i = 0; i < arr.length; i++) {
-            if(arr[i] < 10){
+            if (arr[i] < 10) {
                 count++;
             }
         }
         int[] newArray = new int[arr.length - count];
         int index = 0;
         for (int i = 0; i < arr.length; i++) {
-            if(arr[i] >= 10){
+            if (arr[i] >= 10) {
                 newArray[index++] = arr[i];
             }
         }
@@ -200,44 +200,70 @@ public class Utils {
         int count = 0;
         Arrays.sort(arr);
         for (int i = 0; i < arr.length - 1; i++) {
-            if(arr[i + 1] == arr[i]){
+            if (arr[i + 1] == arr[i]) {
                 count++;
             }
         }
-        System.out.println(count);
-        return null;
+        int[] newArr = new int[arr.length - count];
+        int index = 0;
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i + 1] - arr[i] != 0) {
+                newArr[index++] = arr[i];
+            }
+            newArr[newArr.length - 1] = arr[i];
+        }
+        System.out.println(Arrays.toString(arr));
+        return newArr;
     }
 
-    public static int[] getArray24(int[] arr) {
-        int[] newArray = new int[arr.length];
-        for (int i = 0; i < arr[i]; i++) {
-            if (arr[i] > 0) {
-                newArray[i] = (int) (Math.random() * Integer.MAX_VALUE);
+    public static String getArray24(int[] arr) {
+        Arrays.sort(arr);
+        int countNotUnic = 0;
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i] == arr[i + 1]) {
+                countNotUnic++;
             }
         }
-        return newArray;
+        System.out.println(Arrays.toString(arr));
+        return "countNotUnic = " + countNotUnic + " countUnic = " + (arr.length - countNotUnic);
     }
 
     public static int[] getArray25(int[] arr, int a, int b) {
+        System.out.println(Arrays.toString(arr));
         if (a > b) {
-            int count = a - b;
+            int count = a - b + 1;
             int[] newArray = new int[count];
             for (int i = 0; i < newArray.length; i++) {
                 newArray[i] = arr[b + i];
             }
             return newArray;
-        } else if(a < b) {
-            int count = Math.abs(a - b);
+        } else if (a < b) {
+            int count = Math.abs(a - b) + 1;
             int[] newArray = new int[count];
             for (int i = 0; i < newArray.length; i++) {
                 newArray[i] = arr[a + i];
             }
             return newArray;
-        } else{
+        } else {
             int[] newArray = new int[1];
             newArray[0] = arr[b - 1];
             return newArray;
         }
+    }
+
+    public static int[] getTask26(int[] arr1, int[] arr2) {
+
+        int[] newArr1 = getArray23(arr1);
+        int[] newArr2 = getArray23(arr2);
+        int[] newArr = new int[newArr1.length + newArr2.length];
+        for (int i = 0; i < newArr1.length; i++) {
+            newArr[i] = newArr1[i];
+        }
+        int count = newArr1.length;
+        for (int i = 0; i < newArr2.length; i++) {
+            newArr[count++] = newArr2[i];
+        }
+        return getArray23(newArr);
     }
 }
 

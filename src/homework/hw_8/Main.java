@@ -61,23 +61,20 @@ public class Main {
         System.out.println(Arrays.toString(Utils.getArray21(Utils.getTask20(Utils.getTask18(10)))));
 
         Utils.printTaskNumber(22);
-        System.out.println(Arrays.toString(Utils.getPhone(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 5, 8})));
+        System.out.println(Arrays.toString(Utils.getPhone(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 5, 1, 1, 1, 8})));
 
         Utils.printTaskNumber(23);
-        System.out.println(Arrays.toString(Utils.getArray23(new int[]{1, 1, 1, 2, 3, 4, 4})));
+        System.out.println(Arrays.toString(Utils.getArray23(Utils.getTask18(30))));
 
         Utils.printTaskNumber(24);
-        System.out.println(Arrays.toString(Utils.getArray24(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 5, 8})));
+        System.out.println(Utils.getArray24(Utils.getTask18(30)));
 
         Utils.printTaskNumber(25);
-        System.out.println(Arrays.toString(Utils.getArray25(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 5, 8}, 11, 11)));
+        System.out.println(Arrays.toString(Utils.getArray25(Utils.getTask18(15), 1, 3)));
 
         Utils.printTaskNumber(26);
+        System.out.println(Arrays.toString(Utils.getTask26(Utils.getTask18(10), Utils.getTask18(10))));
 
-        int[] arr = {5, 7, 9, 1, 5};
-        System.out.println(Arrays.toString(arr));
-        Arrays.sort(arr);
-        System.out.println(Arrays.toString(arr));
 
     }
 }
