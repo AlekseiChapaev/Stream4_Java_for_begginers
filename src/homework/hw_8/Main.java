@@ -1,4 +1,4 @@
-package homework.hw8;
+package homework.hw_8;
 
 import java.util.Arrays;
 
@@ -46,31 +46,25 @@ public class Main {
         System.out.println(Arrays.toString(Utils.getMultNumber(9)));
 
         Utils.printTaskNumber(17);
-        System.out.println(Arrays.toString(Utils.getArrayOddNumbers(new int[]{1, 5, 60, 2, 3, 14, 10, 3, 7, 4})));
+        System.out.println(Arrays.toString(Utils.getTask17(new int[]{1, 5, 8, 4, 60, 2, 3, 3, 77, 4, 6})));
 
         Utils.printTaskNumber(18);
-        System.out.println(Arrays.toString(Utils.getArrayFromLenght(10)));
+        System.out.println(Arrays.toString(Utils.getTask18(10)));
 
-        //Написать метод, который принимает на вход длину массива l и количество знаков d
-        // (однозначные, двузначные, трехзначные и тд числа), и генерирует массив случайных целых положительных чисел длины l,
-        // в котором все числа имеют количество знаков d
-
-
-
-        Utils.printTaskNumber(19); // ???????????????????????????????????????????????????????????????????????????????????
-        System.out.println(Arrays.toString(Utils.getArrayNumbers(10, 9)));
+        Utils.printTaskNumber(19);
+        System.out.println(Arrays.toString(Utils.task19(10, 3)));
 
         Utils.printTaskNumber(20);
-        System.out.println(Arrays.toString(Utils.getArrayTwoNumbers(Utils.getArrayFromLenght(10))));
+        System.out.println(Arrays.toString(Utils.getTask20(Utils.getTask18(10))));
 
         Utils.printTaskNumber(21);
-        System.out.println(Arrays.toString(Utils.getArray21(Utils.getArrayNumbers(10, 2))));
+        System.out.println(Arrays.toString(Utils.getArray21(Utils.getTask20(Utils.getTask18(10)))));
 
         Utils.printTaskNumber(22);
         System.out.println(Arrays.toString(Utils.getPhone(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 5, 8})));
 
         Utils.printTaskNumber(23);
-        System.out.println(Arrays.toString(Utils.getArray23(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 5, 8})));
+        System.out.println(Arrays.toString(Utils.getArray23(new int[]{1, 1, 1, 2, 3, 4, 4})));
 
         Utils.printTaskNumber(24);
         System.out.println(Arrays.toString(Utils.getArray24(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 5, 8})));
@@ -80,6 +74,10 @@ public class Main {
 
         Utils.printTaskNumber(26);
 
+        int[] arr = {5, 7, 9, 1, 5};
+        System.out.println(Arrays.toString(arr));
+        Arrays.sort(arr);
+        System.out.println(Arrays.toString(arr));
 
     }
 }

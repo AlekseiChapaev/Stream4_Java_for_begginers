@@ -1,4 +1,4 @@
-package homework.hw8;
+package homework.hw_8;
 
 public class HW8 {
 

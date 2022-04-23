@@ -1,4 +1,6 @@
-package homework.hw8;
+package homework.hw_8;
+
+import java.util.Arrays;
 
 public class Utils {
 
@@ -109,38 +111,34 @@ public class Utils {
         return null;
     }
 
-    public static int[] getArrayOddNumbers(int[] arr) {
-        int countOdd = 0;
+    public static int[] getTask17(int[] arr) {
+        int countOdd = getOddNumbersInArray(arr);
+        int countEven = arr.length - countOdd;
 
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] % 2 != 0) {
-                countOdd++;
-            }
-        }
-        if (countOdd > arr.length / 2) {
-            int[] oddArray = new int[countOdd];
-            int count = 0;
+        if(countOdd == countEven) {
+            return new int[0];
+        } else if(countOdd > countEven){
+            int[] arrTask17 = new int[countOdd];
+            int index = 0;
             for (int i = 0; i < arr.length; i++) {
-                if (arr[i] % 2 != 0) {
-                    oddArray[count] = arr[i];
-                    count++;
+                if(arr[i] % 2 != 0){
+                    arrTask17[index++] = arr[i];
                 }
             }
-            return oddArray;
-        } else {
-            int[] evenArray = new int[countOdd];
-            int count = 0;
-            for (int i = 0; i < arr.length; i++) {
-                if (arr[i] % 2 == 0) {
-                    evenArray[count] = arr[i];
-                    count++;
+            return arrTask17;
+        } else{
+            int index = 0;
+            int[] arrTask17 = new int[countEven];
+            for(int i = 0; i < arr.length; i++){
+                if(arr[i] % 2 == 0){
+                    arrTask17[index++] = arr[i];
                 }
             }
-            return evenArray;
+            return arrTask17;
         }
     }
 
-    public static int[] getArrayFromLenght(int lenght) {
+    public static int[] getTask18(int lenght) {
         int[] arr = new int[lenght];
         for (int i = 0; i < arr.length; i++) {
             arr[i] = (int) (Math.random() * 100);
@@ -148,23 +146,29 @@ public class Utils {
         return arr;
     }
 
-    public static int[] getArrayNumbers(int lenghtArray, int countNumbers) {
-        int[] arr = new int[lenghtArray];
+    public static int[] task19(int l, int c) {
+        int[] arr = new int[l];
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = (int) (Math.random() * Math.pow(10, countNumbers));
+            arr[i] = (int) (Math.random() * ((Math.pow(10, c) - 1 - Math.pow(10, c - 1)) + Math.pow(10, c - 1)));
         }
         return arr;
     }
 
-    public static int[] getArrayTwoNumbers(int[] arr) {
-        int[] newArray = new int[arr.length];
+    public static int[] getTask20(int[] arr) {
+        int count = 0;
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] < 10) {
-                newArray[i] = arr[i] + 10;
-            } else {
-                newArray[i] = arr[i];
+            if(arr[i] < 10){
+                count++;
             }
         }
+        int[] newArray = new int[arr.length - count];
+        int index = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if(arr[i] >= 10){
+                newArray[index++] = arr[i];
+            }
+        }
+        System.out.println(Arrays.toString(arr));
         return newArray;
     }
 
@@ -173,6 +177,7 @@ public class Utils {
         for (int i = 0; i < arr.length; i++) {
             newArray[i] = arr[i] / 10 - arr[i] % 10;
         }
+        System.out.println(Arrays.toString(arr));
         return newArray;
     }
 
@@ -182,7 +187,6 @@ public class Utils {
         if (arr.length != 11) {
             return null;
         } else {
-
             for (int i = 0; i < arr.length; i++) {
                 StringArr[i] = String.valueOf(arr[i]);
             }
@@ -192,24 +196,16 @@ public class Utils {
         return newArray;
     }
 
-
     public static int[] getArray23(int[] arr) {
-        int[] array = new int[arr.length];
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] <= 0) {
-                return null;
-            } else {
-                array[i] = (int) (Math.random() * 10);
-                for (int j = 0; j < arr.length; j++) {
-                    if (array[i] == arr[j]) {
-                        array[i] = array[i] * (int) (Math.random() * 10);
-                        j = 0;
-                    }
-                }
-
+        int count = 0;
+        Arrays.sort(arr);
+        for (int i = 0; i < arr.length - 1; i++) {
+            if(arr[i + 1] == arr[i]){
+                count++;
             }
         }
-        return array;
+        System.out.println(count);
+        return null;
     }
 
     public static int[] getArray24(int[] arr) {
@@ -243,7 +239,5 @@ public class Utils {
             return newArray;
         }
     }
-
-
 }
 
