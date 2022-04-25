@@ -6,7 +6,7 @@ public class HW6 {
         System.out.println("\n*****************************************\n\t\t\t\tTask#" + taskNumber);
     }
 
-    public static void printNumbers(int num) {
+    public static void task16(int num) {
 
         for (int i = 0; i < num; i++) {
             System.out.print(i + " ");
@@ -14,7 +14,7 @@ public class HW6 {
         System.out.println();
     }
 
-    public static void printNumbersStringBuilder(int num) {
+    public static void task1StringBuilder(int num) {
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < num; i++) {
             stringBuilder.append(i).append(" ");
@@ -22,7 +22,7 @@ public class HW6 {
         System.out.println(stringBuilder);
     }
 
-    public static void printRegressionNumbers(int num) {
+    public static void task2(int num) {
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = num; i > -1; i--) {
             stringBuilder.append(i).append(" ");
@@ -30,13 +30,13 @@ public class HW6 {
         System.out.println(stringBuilder);
     }
 
-    public static void printNumbersFromRange(int lowBorder, int highBorder, int stepRange) {
+    public static void task3(int lowBorder, int highBorder, int stepRange) {
         for (int i = lowBorder; i < highBorder + 1; i += stepRange) {
             System.out.print(i + " ");
         }
     }
 
-    public static void printRangeMultiplesNumbers(int lowBorder, int highBorder, int multipleNum) {
+    public static void task4(int lowBorder, int highBorder, int multipleNum) {
         for (int i = highBorder; i > lowBorder - 1; i--) {
             if (i % multipleNum == 0) {
                 System.out.print(i + " ");
@@ -44,13 +44,13 @@ public class HW6 {
         }
     }
 
-    public static void printDoubleNumbersFromRange(double lowBorder, double highBorder, double stepRange) {
+    public static void task5(double lowBorder, double highBorder, double stepRange) {
         for (double i = lowBorder; i <= highBorder; i += stepRange) {
             System.out.println(Math.round(i * 10) / 10.0);
         }
     }
 
-    public static void printRangeNumbers(int lowBorder, int highBorder, int multiple) {
+    public static void task6(int lowBorder, int highBorder, int multiple) {
         StringBuilder sb = new StringBuilder();
         for (int i = lowBorder; i <= highBorder; i++) {
             if (i % multiple == 0) {
@@ -60,7 +60,7 @@ public class HW6 {
         System.out.print(sb);
     }
 
-    public static void printRangeMultiplesNumbersIncludingBorders(int lowBorder, int highBorder, int multiple) {
+    public static void task7(int lowBorder, int highBorder, int multiple) {
         for (int i = lowBorder + 1; i < highBorder; i++) {
             if (i % multiple == 0) {
                 System.out.println(i);
@@ -68,7 +68,7 @@ public class HW6 {
         }
     }
 
-    public static void printNum(int lowBorder, int highBorder) {
+    public static void task8(int lowBorder, int highBorder) {
         for (int i = lowBorder; i <= highBorder; i++) {
             if (i == 0) {
                 System.out.println("ZERO");
@@ -81,8 +81,8 @@ public class HW6 {
     }
 
     public static void printDecNumbers(double start, double end, double step) {
-        for (double i = start; i <= end; i += step) {
-            System.out.print(Math.round(i * 100) / 100.0 + " || ");
+        for (; start < end; start += step) {
+            System.out.print(Math.round(start * 100) / 100.0 + " || ");
         }
     }
 
@@ -93,35 +93,23 @@ public class HW6 {
         }
     }
 
-
-    //   Вывести последовательность 012345678900112233445566778899000…  до числа 9999 включительно.
-
     public static void printNumbers13() {
-//        StringBuilder sb = new StringBuilder();
-//        for(int i = 0; i < 10; i++){
-//            sb.append(i);
-//        }
-//        for(int i = 0; i < 10; i++){
-//            sb.append(i).append(i);
-//        }
-//        for(int i = 0; i < 10; i++){
-//            sb.append(i).append(i).append(i);
-//        }
-//        for(int i = 0; i < 10; i++){
-//            sb.append(i).append(i).append(i).append(i);
-//        }
-//
-//        System.out.println(sb);
-
-        StringBuilder stringBuilder = new StringBuilder();
-        for (int i = 1; i <= 4; i++) {
-            for (int j = 0; j < 10; j++) {
-                stringBuilder.append(String.valueOf(j).repeat(Math.max(0, i)));
-            }
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < 10; i++) {
+            sb.append(i);
         }
-        System.out.println(stringBuilder);
-    }
+        for (int i = 0; i < 10; i++) {
+            sb.append(i).append(i);
+        }
+        for (int i = 0; i < 10; i++) {
+            sb.append(i).append(i).append(i);
+        }
+        for (int i = 0; i < 10; i++) {
+            sb.append(i).append(i).append(i).append(i);
+        }
 
+        System.out.println(sb);
+    }
 
     public static void printNumbers14(int num) {
         System.out.print("0 ");
@@ -139,68 +127,86 @@ public class HW6 {
         }
     }
 
-    //Написать метод, который принимает параметры n, m, l,
-    // и печатает последовательность нечетных чисел начиная с числа n, с шагом m,  длина последовательности  l.
-
-     public static void printNumbers(int n, int m, int l) {
-            StringBuilder sb = new StringBuilder();
-            for (; n <= l * m * 2; n += m) {
-                if (n % 2 != 0) {
-                    sb.append(n + " ");
+    public static void task16(int n, int m, int l) {
+        if (n % 2 == 0 && m % 2 == 0) {
+            System.out.println("Incorrect data");
+        } else {
+            while (l > 0) {
+                if (n % 3 == 0) {
+                    System.out.print(n + " ");
+                    l--;
                 }
+                n = n + m;
             }
-            System.out.println(sb);
+        }
+    }
+
+    public static void task17(int n) {
+        int l = n + 5;
+        for (; n < l; n++) {
+            System.out.println("[" + (n + 1) + "] = " + (n + 2));
+        }
+    }
+
+    public static void task18(int n, int l) {
+        if (n < l) {
+            System.out.println("[" + (n) + "] = " + (n));
+            for (; n < l; n++) {
+                System.out.println("[" + (n + 1) + "] = " + (n * 2));
+            }
+        } else {
+            System.out.println("Invalid data");
+        }
     }
 
     public static void printNumbersTask19(int n) {
-            StringBuilder sb = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
 
-            for (; n < 100; n++) {
-                int a = n / 10;
-                int b = n - a * 10;
-                if (Math.abs(a - b) <= 3) {
-                    sb.append(n).append(" ");
-                }
+        for (; n < 100; n++) {
+            int a = n / 10;
+            int b = n - a * 10;
+            if (Math.abs(a - b) <= 3) {
+                sb.append(n).append(" ");
             }
-            System.out.println(sb);
         }
-
+        System.out.println(sb);
+    }
 
     public static void main(String[] args) {
 
         printLine(1);
-        printNumbers(10);
-        printNumbersStringBuilder(10);
+        task16(10);
+        task1StringBuilder(10);
 
         printLine(2);
-        printRegressionNumbers(9);
+        task2(9);
 
         printLine(3);
-        printNumbersFromRange(50, 55, 2);
+        task3(50, 55, 2);
 
         printLine(4);
-        printRangeMultiplesNumbers(300, 327, 7);
+        task4(300, 327, 7);
 
         printLine(5);
-        printDoubleNumbersFromRange(12, 13, 0.1);
+        task5(12, 13, 0.1);
 
         printLine(6);
-        printRangeNumbers(215, 237, 2);
+        task6(215, 237, 2);
 
         printLine(7);
-        printRangeMultiplesNumbersIncludingBorders(7, 14, 7);
+        task7(7, 14, 7);
 
         printLine(8); // вопрос по нулю !!
-        printRangeNumbers(Short.MIN_VALUE, Short.MAX_VALUE, 15001);
+        task6(Short.MIN_VALUE, Short.MAX_VALUE, 15001);
 
         printLine(9);
-        printNum(-10, 34);
+        task8(-10, 34);
 
         printLine(10);
-        printDecNumbers(10, 100, 12);
+        printDecNumbers(15.5, 20, 0.3);
 
         printLine(11);
-        printRangeNumbers(10, 100, 2);
+        task6(10, 100, 2);
 
         printLine(12);
         printPowNumber(2, 3);
@@ -215,10 +221,15 @@ public class HW6 {
         printNumbers15(25);
 
         printLine(16);
-        printNumbers(3, 3, 5);
+        task16(3, 3, 5);
+
+        printLine(17);
+        task17(5);
+
+        printLine(18);
+        task18(1, 6);
 
         printLine(19);
         printNumbersTask19(10);
-
     }
 }
