@@ -1,4 +1,4 @@
-package homework;
+package homework.hw_1to7;
 
 public class Bottles {
 

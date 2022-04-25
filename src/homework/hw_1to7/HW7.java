@@ -1,4 +1,4 @@
-package homework;
+package homework.hw_1to7;
 
 import java.util.Arrays;
 
@@ -21,8 +21,6 @@ public class HW7 {
         }
         System.out.println();
     }
-
-
 
     public static boolean isCatColor(String[] arr, String color) {
         for (int i = 0; i < arr.length; i++) {
@@ -201,22 +199,22 @@ public class HW7 {
         System.out.println("Average = " + temp / arr.length);
     }
 
-    public static int[][] getDoubleArray(int lenghtArray, int lenghtElementOfArray){
+    public static int[][] getDoubleArray(int lenghtArray, int lenghtElementOfArray) {
         int[][] array = new int[lenghtArray][lenghtElementOfArray];
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
-                array[i][j] = (int)(Math.random() * 10);
+                array[i][j] = (int) (Math.random() * 10);
             }
         }
         return array;
     }
 
-    public static int createAndGetSumElementsDoubleArray(int lenghtArray, int lenghtElementOfArray){
+    public static int createAndGetSumElementsDoubleArray(int lenghtArray, int lenghtElementOfArray) {
         int[][] arr = new int[lenghtArray][lenghtElementOfArray];
         int count = 0;
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[i].length; j++) {
-                arr[i][j] = (int)(Math.random() * 10);
+                arr[i][j] = (int) (Math.random() * 10);
                 count += arr[i][j];
             }
         }
@@ -242,7 +240,6 @@ public class HW7 {
         printTaskNumber(4);
         int[] catsAges = {2, 1, 2, 5, 3, 7, 3, 3};
         printIntArray(catsAges);
-
 
         printTaskNumber(5);
         System.out.println(isCatColor(catsColors, "Red"));
@@ -343,20 +340,18 @@ public class HW7 {
         }
         System.out.println(Arrays.toString(arr));
 
-
         printTaskNumber(17_1);
 
         int[] arr17 = new int[10];
         for (int i = 0; i < arr17.length; i++) {
-            int random = (int)(Math.random() * 10);
-            if(random % 2 == 0) {
+            int random = (int) (Math.random() * 10);
+            if (random % 2 == 0) {
                 arr17[i] = random;
-            } else{
+            } else {
                 arr17[i] = random + 1;
             }
         }
         System.out.println(Arrays.toString(arr17));
-
 
         printTaskNumber(18);
         getAvaregeInArray(catsAges);
@@ -372,11 +367,8 @@ public class HW7 {
         }
         System.out.println(Arrays.toString(array19));
 
-
-
         printTaskNumber(20);
         System.out.println(Arrays.toString(getRandomArray(10)));
-
 
         printTaskNumber(21);
         System.out.println(Arrays.toString(getRandomArray(10)));
@@ -390,8 +382,6 @@ public class HW7 {
         System.out.println(Arrays.toString(getRandomEvenArray(10)));
 
         printTaskNumber(23);
-
-
 
         String[][] catsString = {
                 {"Мурзик", "2", "Grey"},
@@ -407,7 +397,7 @@ public class HW7 {
         for (int i = 0; i < catsString.length; i++) {
             if (i % 2 != 0) {
                 for (int k = 0; k < catsString[i].length; k++) {
-                System.out.print(catsString[i][k] + " ");
+                    System.out.print(catsString[i][k] + " ");
                 }
                 System.out.println();
             }
@@ -418,8 +408,5 @@ public class HW7 {
 
         printTaskNumber(25);
         System.out.println(createAndGetSumElementsDoubleArray(4, 8));
-
-
     }
-
 }
