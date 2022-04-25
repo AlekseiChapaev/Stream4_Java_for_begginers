@@ -75,6 +75,5 @@ public class Main {
         Utils.printTaskNumber(26);
         System.out.println(Arrays.toString(Utils.getTask26(Utils.getTask18(10), Utils.getTask18(10))));
 
-
     }
 }
