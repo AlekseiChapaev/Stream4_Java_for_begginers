@@ -61,10 +61,10 @@ public class Main {
         System.out.println(Arrays.toString(Utils.getArray21(Utils.getTask20(Utils.getTask18(10)))));
 
         Utils.printTaskNumber(22);
-        System.out.println(Arrays.toString(Utils.getPhone(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 5, 1, 1, 1, 8})));
+        System.out.println(Arrays.toString(Utils.getPhone(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 5, 8})));
 
         Utils.printTaskNumber(23);
-        System.out.println(Arrays.toString(Utils.getArray23(Utils.getTask18(30))));
+        System.out.println(Arrays.toString(Utils.getArray23(Utils.getTask18(10))));
 
         Utils.printTaskNumber(24);
         System.out.println(Utils.getArray24(Utils.getTask18(30)));
