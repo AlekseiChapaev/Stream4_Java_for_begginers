@@ -202,7 +202,7 @@ public class Utils {
         for (int i = 0; i < arr.length; i++) {
             for (int j = i + 1; j < arr.length; j++) {
                 if (arr[i] == arr[j]) {
-                    arr[j] = Integer.MIN_VALUE;
+                    arr[j] = 0;
                     count++;
                 }
             }
@@ -210,7 +210,7 @@ public class Utils {
         int[] newArr = new int[arr.length - count];
         int index = 0;
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] != Integer.MIN_VALUE) {
+            if (arr[i] != 0) {
                 newArr[index++] = arr[i];
             }
         }
@@ -243,7 +243,6 @@ public class Utils {
         return "countNotUnic = " + count + " countUnic = " + (arr.length - count);
     }
 
-
     public static int[] getArray25(int[] arr, int a, int b) {
         System.out.println(Arrays.toString(arr));
         if (a > b) {
@@ -268,16 +267,12 @@ public class Utils {
     }
 
     public static int[] getTask26(int[] arr1, int[] arr2) {
-
-        int[] newArr1 = getArray23(arr1);
-        int[] newArr2 = getArray23(arr2);
-        int[] newArr = new int[newArr1.length + newArr2.length];
-        for (int i = 0; i < newArr1.length; i++) {
-            newArr[i] = newArr1[i];
+        int[] newArr = new int[arr1.length + arr2.length];
+        for (int i = 0; i < arr1.length; i++) {
+            newArr[i] = arr1[i];
         }
-        int count = newArr1.length;
-        for (int i = 0; i < newArr2.length; i++) {
-            newArr[count++] = newArr2[i];
+        for (int i = 0; i < arr2.length; i++) {
+            newArr[arr1.length + i] = arr2[i];
         }
         return getArray23(newArr);
     }
