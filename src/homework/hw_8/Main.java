@@ -52,7 +52,7 @@ public class Main {
         System.out.println(Arrays.toString(Utils.getTask18(10)));
 
         Utils.printTaskNumber(19);
-        System.out.println(Arrays.toString(Utils.task19(10, 3)));
+        System.out.println(Arrays.toString(Utils.task19(10,2)));
 
         Utils.printTaskNumber(20);
         System.out.println(Arrays.toString(Utils.getTask20(Utils.getTask18(10))));

@@ -164,7 +164,7 @@ public class Utils {
         int[] newArray = new int[arr.length - count];
         int index = 0;
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] >= 10) {
+            if (arr[i] >= 10 && arr[i] < 100) {
                 newArray[index++] = arr[i];
             }
         }
