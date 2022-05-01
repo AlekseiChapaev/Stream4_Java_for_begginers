@@ -69,6 +69,9 @@ public class Main {
         Utils.printTaskNumber(24);
         System.out.println(Utils.getArray24(Utils.getTask18(30)));
 
+        Utils.printTaskNumber(24_1);
+        System.out.println(Utils.getArray24_1(Utils.getTask18(10)));
+
         Utils.printTaskNumber(25);
         System.out.println(Arrays.toString(Utils.getArray25(Utils.getTask18(15), 1, 3)));
 

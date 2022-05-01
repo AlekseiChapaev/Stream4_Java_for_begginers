@@ -201,7 +201,7 @@ public class Utils {
         int count = 0;
         for (int i = 0; i < arr.length; i++) {
             for (int j = i + 1; j < arr.length; j++) {
-                if(arr[i] == arr[j]){
+                if (arr[i] == arr[j]) {
                     arr[j] = Integer.MIN_VALUE;
                     count++;
                 }
@@ -210,11 +210,11 @@ public class Utils {
         int[] newArr = new int[arr.length - count];
         int index = 0;
         for (int i = 0; i < arr.length; i++) {
-            if(arr[i] != Integer.MIN_VALUE){
+            if (arr[i] != Integer.MIN_VALUE) {
                 newArr[index++] = arr[i];
             }
         }
-    return newArr;
+        return newArr;
     }
 
     public static String getArray24(int[] arr) {
@@ -228,6 +228,21 @@ public class Utils {
         System.out.println(Arrays.toString(arr));
         return "countNotUnic = " + countNotUnic + " countUnic = " + (arr.length - countNotUnic);
     }
+
+    public static String getArray24_1(int[] arr) {
+        System.out.println(Arrays.toString(arr));
+        int count = 0;
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i] == arr[j]) {
+                    arr[j] = Integer.MIN_VALUE;
+                    count++;
+                }
+            }
+        }
+        return "countNotUnic = " + count + " countUnic = " + (arr.length - count);
+    }
+
 
     public static int[] getArray25(int[] arr, int a, int b) {
         System.out.println(Arrays.toString(arr));
