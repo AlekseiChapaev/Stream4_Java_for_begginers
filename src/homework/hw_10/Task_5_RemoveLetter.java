@@ -1,6 +1,6 @@
 package homework.hw_10;
 
-public class Task_5 {
+public class Task_5_RemoveLetter {
 
     public static int task5(String str){
         int count = 0;
