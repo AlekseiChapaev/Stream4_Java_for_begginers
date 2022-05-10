@@ -1,6 +1,6 @@
 package homework.hw_10;
 
-public class Task_1 {
+public class Task_1_RemoveWhiteSpaces {
 
     public static void whiteSpaces(String str) {
         if (str.isEmpty()) {
