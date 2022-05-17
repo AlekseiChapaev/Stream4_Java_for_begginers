@@ -3,7 +3,7 @@ package homework.hw_10;
 public class Task_3_RemoveAllZeros {
 
     public static void removeAllZeros(String str){
-        if(str.isEmpty()){
+        if(str == null || str.isEmpty()){
             System.out.println("Строка пустая");
         } else{
             System.out.println(str.replace(" ", "").replace("0", ""));
